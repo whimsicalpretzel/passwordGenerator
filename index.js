@@ -1,6 +1,9 @@
 const generatePassword = document.querySelector(".generateBtn")
 const firstOutput = document.getElementById("output1")
 const secondOutput = document.getElementById("output2")
+let lightMode = localStorage.getItem('lightMode')
+const modeToggleBtn = document.querySelector("#mode-toggle")
+const headline = document.querySelector(".headline")
 
 const characters = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T",
@@ -9,6 +12,34 @@ const characters = [
     "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+",
     "=","{","[","}","]",",","|",":",";","<",">",".","?","/"
 ];
+
+const enableLightMode = () => {
+    document.body.classList.add('lightMode')
+    headline.classList.add('lightModeHeadline')
+    localStorage.setItem('lightMode', 'enabled')
+    modeToggleBtn.innerText = `Enable Dark Mode`
+}
+
+const disableLightMode = () => {
+    document.body.classList.remove('lightMode')
+    headline.classList.remove('lightModeHeadline')
+    localStorage.setItem('lightMode', null)
+    modeToggleBtn.innerText = `Enable Light Mode`
+}
+
+if (lightMode === 'enabled') {
+    enableLightMode()
+}
+
+modeToggleBtn.addEventListener('click', () => {
+    lightMode = localStorage.getItem('lightMode')
+
+    if (lightMode !== 'enabled') {
+        enableLightMode()
+    } else {
+        disableLightMode()
+    }
+})
 
 
 

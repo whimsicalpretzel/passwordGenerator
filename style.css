@@ -7,7 +7,19 @@
 body {
     padding: 2em;
     background-color: #1F2937;
-    margin: 4em 0 0 1.5em;
+    margin: 3em 0 0 1.5em;
+}
+
+#mode-toggle {
+    background-color: #10B981;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+    border: none;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    padding: 0.5em;
+    margin-bottom: 2em;
 }
 
 header {
@@ -82,10 +94,10 @@ input {
 
 /* Light Mode */
 
-body.dark-mode {
+.lightMode {
     background-color: whitesmoke;
 }
 
-.dark-mode {
+.lightModeHeadline {
     color: #1F2937;
 }
